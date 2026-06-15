@@ -66,13 +66,17 @@ export default function Onboarding() {
       {/* Step indicators */}
       <div className="step-indicators">
         {STEPS.map((s, i) => (
-          <div key={s.id} className="step-indicator-item">
-            <div className={`step-circle ${step > s.id ? 'done' : step === s.id ? 'active' : ''}`}>
-              {step > s.id ? <CheckCircle2 size={14} /> : s.id}
+          <>
+            <div key={s.id} className="step-indicator-item">
+              <div className={`step-circle ${step > s.id ? 'done' : step === s.id ? 'active' : ''}`}>
+                {step > s.id ? <CheckCircle2 size={14} /> : s.id}
+              </div>
+              <span className={`step-indicator-label ${step === s.id ? 'active' : ''}`}>{s.label}</span>
             </div>
-            <span className={`step-indicator-label ${step === s.id ? 'active' : ''}`}>{s.label}</span>
-            {i < STEPS.length - 1 && <div className={`step-connector ${step > s.id ? 'done' : ''}`} />}
-          </div>
+            {i < STEPS.length - 1 && (
+              <div key={`conn-${s.id}`} className={`step-connector ${step > s.id ? 'done' : ''}`} />
+            )}
+          </>
         ))}
       </div>
 
