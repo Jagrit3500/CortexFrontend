@@ -116,18 +116,7 @@ export default function Auth() {
             ))}
           </div>
 
-          <div className="auth-stats-row">
-            {[
-              { val: '42K+', label: 'Learners' },
-              { val: '98%',  label: 'Completion' },
-              { val: '4.9★', label: 'Rating' },
-            ].map(s => (
-              <div key={s.label} className="auth-stat">
-                <div className="auth-stat-val">{s.val}</div>
-                <div className="auth-stat-label">{s.label}</div>
-              </div>
-            ))}
-          </div>
+
         </div>
       </div>
 

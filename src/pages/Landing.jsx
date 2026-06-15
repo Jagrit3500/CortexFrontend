@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { ArrowRight, Play, Zap, Brain, Map, MessageCircle, BarChart2, RefreshCw, Code2, LogOut, LayoutDashboard, Star, ChevronRight } from 'lucide-react'
+import { ArrowRight, Play, Zap, Brain, Map, MessageCircle, BarChart2, RefreshCw, Code2, LogOut, LayoutDashboard, ChevronRight } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useApp }  from '../context/AppContext'
 import './Landing.css'
@@ -18,12 +18,6 @@ const steps = [
   { num: '02', title: 'Generate Path',    desc: 'AI builds your personal curriculum' },
   { num: '03', title: 'Learn & Practice', desc: 'Interactive lessons with code & examples' },
   { num: '04', title: 'Master',           desc: 'Quizzes, reviews, and skill mastery' },
-]
-
-const testimonials = [
-  { text: 'Cortex adapted to my pace completely. I went from beginner to job-ready in 4 months.', name: 'Priya M.',  role: 'Frontend Developer' },
-  { text: 'The Socratic tutor is incredible. It never just gives you the answer — you actually understand.', name: 'James K.', role: 'CS Student' },
-  { text: 'Best learning platform I have used. The mastery map keeps me motivated every single day.', name: 'Rahul S.', role: 'Data Scientist' },
 ]
 
 export default function Landing() {
@@ -59,7 +53,6 @@ export default function Landing() {
           <div className="landing-nav-links">
             <a href="#features">Features</a>
             <a href="#how">How It Works</a>
-            <a href="#testimonials">Reviews</a>
           </div>
           <div className="landing-nav-actions">
             {isAuthenticated ? (
@@ -134,13 +127,6 @@ export default function Landing() {
                 </button>
               </>
             )}
-          </div>
-          <div className="hero-stats">
-            <span className="mono" style={{ fontSize: 12, color: 'var(--text-muted)' }}>42,000+ Learners</span>
-            <span className="hero-stat-divider" />
-            <span className="mono" style={{ fontSize: 12, color: 'var(--text-muted)' }}>98% Completion Rate</span>
-            <span className="hero-stat-divider" />
-            <span className="mono" style={{ fontSize: 12, color: 'var(--text-muted)' }}>4.9★ Rating</span>
           </div>
         </div>
 
@@ -218,27 +204,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section" id="testimonials">
-        <div className="section-label text-primary">What Learners Say</div>
-        <div className="testimonials-grid">
-          {testimonials.map((t) => (
-            <div key={t.name} className="testimonial-card card">
-              <div className="testimonial-stars">
-                {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="var(--amber)" color="var(--amber)" />)}
-              </div>
-              <p className="testimonial-text">"{t.text}"</p>
-              <div className="testimonial-author">
-                <div className="testimonial-avatar">{t.name[0]}</div>
-                <div>
-                  <div style={{ fontSize: 13, fontWeight: 600 }}>{t.name}</div>
-                  <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>{t.role}</div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Final CTA */}
       <section className="section">
@@ -250,7 +215,7 @@ export default function Landing() {
           <p className="cta-sub">
             {isAuthenticated
               ? `Welcome back${displayName ? `, ${displayName.split(' ')[0]}` : ''}. Pick up right where you left off.`
-              : 'Join 42,000 learners who are already adapting faster.'}
+              : 'Your personalized AI learning path is ready — start for free, no credit card needed.'}
           </p>
           {isAuthenticated ? (
             <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
