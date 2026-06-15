@@ -155,7 +155,8 @@ export async function getLearningPath(userId, { subject = 'General', level = 'be
 export async function getModule(moduleId) {
   if (config.useMock) {
     await delay(300)
-    const path = buildMockPath('Python')
+    // Build a generic path (no hardcoded subject)
+    const path = buildMockPath('General')
     return path.modules.find(m => m.id === moduleId) || path.modules[0]
   }
 

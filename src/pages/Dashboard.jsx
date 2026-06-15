@@ -24,7 +24,7 @@ function getGreeting() {
 }
 
 // ── Daily Goal Modal ─────────────────────────────────────────────
-const GOAL_OPTIONS = ['15 min/day', '30 min/day', '45 min/day', '1 hour/day', '2 hours/day']
+const GOAL_OPTIONS = ['15 min/day', '30 min/day', '1 hour/day', '2 hours/day']
 
 function DailyGoalModal({ current, onSave, onClose }) {
   const [selected, setSelected] = useState(current || '30 min/day')

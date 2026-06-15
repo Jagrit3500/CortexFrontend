@@ -52,10 +52,6 @@ export default function Settings() {
     '1-2 hours/day': '1 hour/day',
     '2+ hours/day':  '2 hours/day',
   }
-  // Maps Dashboard goal label → onboarding time range (reverse)
-  const GOAL_TO_TIME = Object.fromEntries(
-    Object.entries(TIME_TO_GOAL).map(([k, v]) => [v, k])
-  )
 
   const saveProfile = async () => {
     setSaving(true)

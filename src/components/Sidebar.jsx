@@ -16,7 +16,7 @@ const navItems = [
 export default function Sidebar() {
   const navigate  = useNavigate()
   const location  = useLocation()
-  const { profile, learningPath, clearAppState } = useApp()
+  const { profile, learningPath, completedLessons, clearAppState } = useApp()
   const { user, logout, isGuest } = useAuth()
 
   const [showMenu, setShowMenu] = useState(false)
